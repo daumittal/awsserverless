@@ -8,7 +8,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
-        "projectName": "AWSServerlessCheckingOut",
+        "projectName": "AWSServerlessCheckingOut_Release",
         "projectPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
         "packagesPath": "C:\\Users\\sudhi\\.nuget\\packages\\",
         "outputPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\obj\\",
