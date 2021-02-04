@@ -6,4 +6,4 @@ phases:
             dotnet: latest
     build:
         commands:
-            - dotnet build .\WebApplication1\WebApplication1.csproj
+            - dotnet build AWSServerlessCheckingOut.csproj
