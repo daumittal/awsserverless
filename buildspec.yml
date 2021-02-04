@@ -2,18 +2,12 @@
 phases: 
   build: 
     commands: 
-      - "dotnet build -c Release ./AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
+      - "dotnet build AWSServerlessCheckingOut/AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
   install: 
     runtime-versions: 
       dotnet: 3.1
   pre_build: 
     commands: 
       - "echo Restore started on `date`"
-      - "dotnet restore AWSServerlessCheckingOut.csproj"
-reports: 
-  DotnetTestExamples: 
-    base-directory: ./testresults
-    file-format: VisualStudioTrx
-    files: 
-      - "**/*"
+      - "dotnet restore AWSServerlessCheckingOut/AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
 version: 0.2
