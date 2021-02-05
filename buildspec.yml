@@ -1,4 +1,7 @@
 --- 
+artifacts: 
+  files: 
+    - "**/*"
 phases: 
   build: 
     commands: 
