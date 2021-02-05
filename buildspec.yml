@@ -6,7 +6,8 @@ phases:
   build: 
     commands: 
       - "dotnet build AWSServerlessCheckingOut/AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
-      - "dotnet lambda deploy-serverless"  
+      - "CD AWSServerlessCheckingOut/AWSServerlessCheckingOut"
+      - "dotnet lambda deploy-serverless "  
   install: 
     runtime-versions: 
       dotnet: 3.1
