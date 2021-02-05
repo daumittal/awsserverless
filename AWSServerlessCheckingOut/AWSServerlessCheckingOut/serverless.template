@@ -10,7 +10,7 @@
       "Properties": {
         "Handler": "AWSServerlessCheckingOut::AWSServerlessCheckingOut.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnetcore3.1",
-        "CodeUri": "s3://netcore-sudhir/demo-sudhir1",
+        "CodeUri": "s3://netcore-sudhir/Demo_Build_Sudhir",
         "MemorySize": 256,
         "Timeout": 30,
         "Role": null,
