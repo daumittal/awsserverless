@@ -13,6 +13,6 @@
     "s3-prefix"     : "AWSServerlessCheckingOut/",
     "template"      : "serverless.template",
     "template-parameters" : "",
-    "s3-bucket"           : "netcore-sudhir",
+    "s3-bucket"           : "testsudhir1",
     "stack-name"          : "awsserverless-sudhir"
 }

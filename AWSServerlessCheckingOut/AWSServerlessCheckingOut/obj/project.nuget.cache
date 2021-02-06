@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "g7kb6Bqsjf5CArexXrdyrt3D6uUkDOP9JQWSsxwAGbl90hR/2LLC+TORT3x3WFXL69tvoieIA5Qzj5f3rvV7Vg==",
+  "dgSpecHash": "6qcfb1fspqhVwgludJu1l/TXNNBhlM6wN7iG0PCxEsSPdp7bIA34wKhCZMMM/Y31fNi9Qtuie7NzLVcxsiL5cw==",
   "success": true,
   "projectFilePath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,8 @@
     "C:\\Users\\sudhi\\.nuget\\packages\\microsoft.extensions.primitives\\2.1.0\\microsoft.extensions.primitives.2.1.0.nupkg.sha512",
     "C:\\Users\\sudhi\\.nuget\\packages\\system.io.pipelines\\4.7.2\\system.io.pipelines.4.7.2.nupkg.sha512",
     "C:\\Users\\sudhi\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\sudhi\\.nuget\\packages\\microsoft.netcore.app.host.linux-x64\\3.1.11\\microsoft.netcore.app.host.linux-x64.3.1.11.nupkg.sha512"
   ],
   "logs": []
 }
