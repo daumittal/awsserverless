@@ -1,5 +1,6 @@
 --- 
 artifacts: 
+  type: zip
   files: 
     - "**/*"
   name: "$Env:TEST_ENV_VARIABLE_$(date +%Y-%m-%d).zip"
