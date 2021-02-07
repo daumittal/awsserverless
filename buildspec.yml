@@ -1,16 +1,35 @@
---- 
-artifacts: 
-  files: 
-    - "**/*"
-phases: 
-  build: 
-    commands: 
-      - "dotnet build AWSServerlessCheckingOut/AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
-  install: 
-    runtime-versions: 
-      dotnet: 3.1
-  pre_build: 
-    commands: 
-      - "echo Restore started on `date`"
-      - "dotnet restore AWSServerlessCheckingOut/AWSServerlessCheckingOut/AWSServerlessCheckingOut.csproj"
 version: 0.2
+
+env:
+  variables:
+     SOLUTION_NAME: 'AWSServerlessCheckingOut'
+     CONFIGURATION: 'Release'
+     WEB_PROJECT_NAME: 'AWSServerlessCheckingOut'
+     TEST_ENV_VARIABLE: 'AWSServerlessCheckingOut_metadata_Api'
+     SiteBucketName: 'testsudhir1'
+phases:
+  build:
+    commands:
+      - dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release
+  install:
+    runtime-versions:
+      dotnet: 3.1
+  pre_build:
+    commands:
+      - echo "Region = ${AWS_REGION}"
+      - echo "CODEBUILD_SOURCE_REPO_URL = ${CODEBUILD_SOURCE_REPO_URL}"
+      - echo "CODEBUILD_RESOLVED_SOURCE_VERSION = ${CODEBUILD_RESOLVED_SOURCE_VERSION}"
+      - echo "Account Id = $(echo $CODEBUILD_BUILD_ARN | cut -f5 -d ':')"
+      - echo "Repo Name = $(echo $CODEBUILD_SOURCE_VERSION | cut -f2 -d '/')"
+      - echo "CONFIGURATION = $(echo ${env:CONFIGURATION})"    
+      - echo "Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}"    
+      - echo Restore started on `date`
+      - export PATH="$PATH:/root/.dotnet/tools"
+      - apt-get update
+      - apt-get install zip -y
+      - dotnet restore MetaData.sln
+      - aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/
+artifacts:
+  files:
+    - "**/*"
+  name: $Env:TEST_ENV_VARIABLE_$(date +%Y-%m-%d).zip

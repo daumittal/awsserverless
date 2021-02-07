@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj": {}
+    "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj": {}
   },
   "projects": {
-    "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj": {
+    "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
+        "projectUniqueName": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
         "projectName": "AWSServerlessCheckingOut_Release",
-        "projectPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
+        "projectPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
         "packagesPath": "C:\\Users\\sudhi\\.nuget\\packages\\",
-        "outputPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\obj\\",
+        "outputPath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

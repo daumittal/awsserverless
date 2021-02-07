@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "g7kb6Bqsjf5CArexXrdyrt3D6uUkDOP9JQWSsxwAGbl90hR/2LLC+TORT3x3WFXL69tvoieIA5Qzj5f3rvV7Vg==",
+  "dgSpecHash": "jhQa6XjrlycbXIUAeoFa880zV09mFGCI0AKQN2oUCyaHqThXvZO3zYH65IMvAjIvjbtZf4C1zAwUfS6Rq0jLZQ==",
   "success": true,
-  "projectFilePath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
+  "projectFilePath": "D:\\SudhirSharma\\LearningFolder\\AWS\\Serverless\\AWSServerlessCheckingOut\\AWSServerlessCheckingOut.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sudhi\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.4.0\\amazon.lambda.apigatewayevents.2.4.0.nupkg.sha512",
     "C:\\Users\\sudhi\\.nuget\\packages\\amazon.lambda.applicationloadbalancerevents\\2.1.0\\amazon.lambda.applicationloadbalancerevents.2.1.0.nupkg.sha512",
