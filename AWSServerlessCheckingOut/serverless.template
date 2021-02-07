@@ -10,7 +10,7 @@
       "Properties": {
         "Handler": "AWSServerlessCheckingOut::AWSServerlessCheckingOut.LambdaEntryPoint::FunctionHandlerAsync",
         "Runtime": "dotnetcore3.1",
-        "CodeUri": "s3://codepipeline-us-west-1-443596421212/pipe3/*",
+        "CodeUri": "s3://testsudhir1/AWSServerlessCheckingOut_metadata_Api",
         "MemorySize": 256,
         "Timeout": 30,
         "Role": null,
