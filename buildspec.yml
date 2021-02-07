@@ -27,7 +27,7 @@ phases:
       - export PATH="$PATH:/root/.dotnet/tools"
       - apt-get update
       - apt-get install zip -y
-      - dotnet restore MetaData.sln
+      - dotnet restore AWSServerlessCheckingOut.sln
       - aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/
 artifacts:
   files:
