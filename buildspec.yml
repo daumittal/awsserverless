@@ -31,4 +31,5 @@ phases:
       - aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/
 artifacts:
   files:
+    - "**/*"
   name: $Env:TEST_ENV_VARIABLE_$(date +%Y-%m-%d).zip
