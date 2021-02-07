@@ -32,6 +32,6 @@ phases:
       - "apt-get install zip -y"
       - "dotnet restore AWSServerlessCheckingOut.sln"
       - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
-      - "aws cloudformation package --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --output AWSServerlessCheckingOut/aws-lambda-tools-defaults.yml --s3-bucket testsudhir1"
-      - "aws cloudformation deploy --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.yml --stack-name testsudhir1"
+      - "aws cloudformation package --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --output AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --s3-bucket testsudhir1"
+      - "aws cloudformation deploy --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --stack-name testsudhir1"
 version: 0.2
