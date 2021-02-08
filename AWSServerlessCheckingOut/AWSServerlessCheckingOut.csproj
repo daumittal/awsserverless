@@ -8,12 +8,6 @@
     <AssemblyName>AWSServerlessCheckingOut_Release</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="serverless.template.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="serverless.template.json" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Amazon.Lambda.AspNetCoreServer" Version="5.3.0" />
   </ItemGroup>
 </Project>
