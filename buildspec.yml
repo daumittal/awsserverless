@@ -11,12 +11,16 @@ env:
 phases: 
   build: 
     commands: 
-      - "echo Publish Started on `date`"
+      - "echo Build Started on `date`"
       - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
-      - "cp Procfile ./build_output"
   install: 
     runtime-versions: 
       dotnet: "${DOTNET_CORE_RUNTIME}"
+  post_build: 
+    commands: 
+      - "echo Publish started on `date`"
+      - "dotnet publish -c Release -o ./build_ouput AWSServerlessCheckingOut.sln --self-contained false"
+      - "cp Procfile ./build_output"
   pre_build: 
     commands: 
       - "echo \"Region = ${AWS_REGION}\""
