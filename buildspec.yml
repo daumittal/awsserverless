@@ -1,27 +1,18 @@
 --- 
-artifacts: 
-  base-directory: ./build_output
-  discard-paths: false
-  files: 
-    - "**/*"
 env: 
   variables: 
-    DOTNET_CORE_RUNTIME: 3.1
-    PROJECT: AWSServerlessCheckingOut
+    CONFIGURATION: Release
+    SOLUTION_NAME: AWSServerlessCheckingOut
     SiteBucketName: testsudhir1
+    TEST_ENV_VARIABLE: AWSServerlessCheckingOut_metadata_Api
+    WEB_PROJECT_NAME: AWSServerlessCheckingOut
 phases: 
   build: 
     commands: 
-      - "echo Build Started on `date`"
       - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
   install: 
     runtime-versions: 
-      dotnet: "${DOTNET_CORE_RUNTIME}"
-  post_build: 
-    commands: 
-      - "echo Publish started on `date`"
-      - "dotnet restore AWSServerlessCheckingOut.sln"
-      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
+      dotnet: 3.1
   pre_build: 
     commands: 
       - "echo \"Region = ${AWS_REGION}\""
@@ -32,4 +23,9 @@ phases:
       - "echo \"CONFIGURATION = $(echo ${env:CONFIGURATION})\""
       - "echo \"Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}\""
       - "echo Restore started on `date`"
+      - "export PATH=\"$PATH:/root/.dotnet/tools\""
+      - "apt-get update"
+      - "apt-get install zip -y"
+      - "dotnet restore AWSServerlessCheckingOut.sln"
+      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
 version: 0.2
