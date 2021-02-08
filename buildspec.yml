@@ -1,23 +1,22 @@
 --- 
 artifacts: 
+  base-directory: ./build_output
+  discard-paths: false
   files: 
     - "**/*"
-  name: "$Env:TEST_ENV_VARIABLE_$(date +%Y-%m-%d).zip"
-  type: zip
 env: 
   variables: 
-    CONFIGURATION: Release
-    SOLUTION_NAME: AWSServerlessCheckingOut
-    SiteBucketName: testsudhir1
-    TEST_ENV_VARIABLE: AWSServerlessCheckingOut_metadata_Api
-    WEB_PROJECT_NAME: AWSServerlessCheckingOut
+    DOTNET_CORE_RUNTIME: 3.1
+    PROJECT: AWSServerlessCheckingOut
 phases: 
   build: 
     commands: 
+      - "echo Publish Started on `date`"
       - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
+      - "cp Procfile ./build_output"
   install: 
     runtime-versions: 
-      dotnet: 3.1
+      dotnet: "${DOTNET_CORE_RUNTIME}"
   pre_build: 
     commands: 
       - "echo \"Region = ${AWS_REGION}\""
@@ -28,9 +27,11 @@ phases:
       - "echo \"CONFIGURATION = $(echo ${env:CONFIGURATION})\""
       - "echo \"Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}\""
       - "echo Restore started on `date`"
-      - "export PATH=\"$PATH:/root/.dotnet/tools\""
-      - "apt-get update"
-      - "apt-get install zip -y"
       - "dotnet restore AWSServerlessCheckingOut.sln"
-      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
+reports: 
+  $(PROJECT): 
+    base-directory: ./restresults
+    file-format: VIsualStudioTrx
+    files: 
+      - "**/*"
 version: 0.2
