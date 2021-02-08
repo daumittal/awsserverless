@@ -29,7 +29,6 @@ phases:
       - "dotnet restore AWSServerlessCheckingOut.sln"
     post_build: 
       commands: 
-        - "dotnet publish -c Release -o ./build_output AWSServerlessCheckingOut.sln --self-contained false"
         - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
         - "aws cloudformation package --s3-bucket testsudhir1 --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --output json > packaged-template.json"
 version: 0.2
