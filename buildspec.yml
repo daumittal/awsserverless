@@ -28,10 +28,4 @@ phases:
       - "echo \"Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}\""
       - "echo Restore started on `date`"
       - "dotnet restore AWSServerlessCheckingOut.sln"
-reports: 
-  $(PROJECT): 
-    base-directory: ./testresults
-    file-format: VisualStudioTrx
-    files: 
-      - "**/*"
 version: 0.2
