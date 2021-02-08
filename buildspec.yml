@@ -33,4 +33,10 @@ phases:
         - "echo Publish started on `date`"
         - "dotnet publish -c Release -o ./build_output AWSServerlessCheckingOut.sln --self-contained false"
         - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
+reports: 
+  "${SOLUTION_NAME}": 
+    base-directory: ./testresults
+    file-format: VisualStudioTrx
+    files: 
+      - "**/*"
 version: 0.2
