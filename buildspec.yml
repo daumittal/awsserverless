@@ -1,9 +1,4 @@
 --- 
-artifacts: 
-  files: 
-    - "**/*"
-  name: abc.zip"
-  type: zip
 env: 
   variables: 
     CONFIGURATION: Release
