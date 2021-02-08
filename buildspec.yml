@@ -8,6 +8,7 @@ env:
   variables: 
     DOTNET_CORE_RUNTIME: 3.1
     PROJECT: AWSServerlessCheckingOut
+    SiteBucketName: testsudhir1
 phases: 
   build: 
     commands: 
@@ -19,8 +20,8 @@ phases:
   post_build: 
     commands: 
       - "echo Publish started on `date`"
-      - "dotnet publish -c Release -o ./build_ouput AWSServerlessCheckingOut.sln --self-contained false"
-      - "cp Procfile ./build_output"
+      - "dotnet restore AWSServerlessCheckingOut.sln"
+      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
   pre_build: 
     commands: 
       - "echo \"Region = ${AWS_REGION}\""
@@ -31,5 +32,4 @@ phases:
       - "echo \"CONFIGURATION = $(echo ${env:CONFIGURATION})\""
       - "echo \"Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}\""
       - "echo Restore started on `date`"
-      - "dotnet restore AWSServerlessCheckingOut.sln"
 version: 0.2
