@@ -30,8 +30,8 @@ phases:
       - "dotnet restore AWSServerlessCheckingOut.sln"
 reports: 
   $(PROJECT): 
-    base-directory: ./restresults
-    file-format: VIsualStudioTrx
+    base-directory: ./testresults
+    file-format: VisualStudioTrx
     files: 
       - "**/*"
 version: 0.2
