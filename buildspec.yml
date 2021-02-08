@@ -10,6 +10,8 @@ phases:
   build: 
     commands: 
       - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
+      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
+      - "aws cloudformation package --s3-bucket testsudhir1 --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --output json > packaged-template.json"
   install: 
     runtime-versions: 
       dotnet: 3.1
@@ -28,7 +30,5 @@ phases:
       - "apt-get install zip -y"
       - "dotnet restore AWSServerlessCheckingOut.sln"
     post_build: 
-      commands: 
-        - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
-        - "aws cloudformation package --s3-bucket testsudhir1 --template AWSServerlessCheckingOut/aws-lambda-tools-defaults.json --output json > packaged-template.json"
+      commands: ~
 version: 0.2
