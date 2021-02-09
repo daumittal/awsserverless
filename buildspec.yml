@@ -9,7 +9,9 @@ env:
 phases: 
   build: 
     commands: 
-      - "aws cloudformation package --s3-bucket testsudhir1 --template AWSServerlessCheckingOut/serverless.template --output json > packaged-template.json"
+      - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
+      - "aws cloudformation package --s3-bucket ${SiteBucketName} --template serverless.template --output json > packaged-template.json"
+      - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
   install: 
     runtime-versions: 
       dotnet: 3.1
@@ -23,4 +25,10 @@ phases:
       - "echo \"CONFIGURATION = $(echo ${env:CONFIGURATION})\""
       - "echo \"Commit Id = ${CODEBUILD_RESOLVED_SOURCE_VERSION}\""
       - "echo Restore started on `date`"
+      - "export PATH=\"$PATH:/root/.dotnet/tools\""
+      - "apt-get update"
+      - "apt-get install zip -y"
+      - "dotnet restore AWSServerlessCheckingOut.sln"
+    post_build: 
+      commands: ~
 version: 0.2
