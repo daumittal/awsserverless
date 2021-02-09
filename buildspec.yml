@@ -10,7 +10,7 @@ phases:
   build: 
     commands: 
       - "dotnet build --no-restore AWSServerlessCheckingOut.sln --configuration Release"
-      - "aws cloudformation package --s3-bucket ${SiteBucketName} --template serverless.template --output json > packaged-template.json"
+      - "aws cloudformation package --s3-bucket testsudhir1 --template serverless.template --output json > packaged-template.json"
       - "aws s3 cp --recursive --acl public-read . s3://${SiteBucketName}/"
   install: 
     runtime-versions: 
